@@ -43,7 +43,7 @@ from .models import CustomUser
 from django.utils.html import format_html
 
 admin.site.unregister(Group)
-admin.site.site_header = 'My Django Portfolio Project'
+admin.site.site_header = 'My Django Portfolio Project (By Asad Mughal)'
 admin.site.site_title = 'Portfolio Admin Panel'
 admin.site.index_title = 'Portfolio Admin Panel'
 
