@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+  <div class="container">
+    <div class="row my-3">
+     <div class="col-sm-6 offset-sm-3">
+      <h3>Add Skill</h3>
+      <hr>
+      <form action="" method="post" novalidate class="shadow p-5">
+       {% csrf_token %}
+       {% for fm in form %}
+       <div class="form-group">
+           {{fm.label_tag}} {{fm}}
+           <small class="text-danger">{{fm.errors|striptags}}</small><br><br>
+       </div>
+       {% endfor %}
+       <input type="submit" value="submit" class="btn btn-primary mt-4"> <br>
+
+        {% comment %}//////////// To show the errors for field errors ////////////////{% endcomment %}
+        
+       {% if form.non_field_errors %}
+           {% for error in form.non_field_errors %}
+           <p class="alert alert-danger my-3">{{error}}</p>
+           {% endfor %}
+           {% endif %}
+      </form>
+      <div class="col-sm-12 ">
+        <button type="button" class="btn btn-primary" style="width: 100%;" onclick="history.back()"> Go Back </button>  
+    </div>
+        <br>
+        <div>
+            {% for message in messages %}
+            <p class="alert alert-success my-3">{{message}}</p>
+            {% endfor %}
+        </div>
+    </div>
+     </div>
+    </div>
+   </div>
+</body>
+
+{% endblock content %}
+

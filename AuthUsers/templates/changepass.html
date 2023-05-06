@@ -5,33 +5,35 @@
     <div class="container">
         <div class="row my-3">
          <div class="col-sm-6 offset-sm-3">
-          <h3>Sign Up</h3>
+          <h3>Change Password</h3>
           <hr>
-          <form action="" method="post" enctype="multipart/form-data" novalidate class="shadow p-5">
+          <form action="" method="post" novalidate class="shadow p-5">
            {% csrf_token %}
+
+           
+            
            {% for fm in form %}
            <div class="form-group">
                {{fm.label_tag}} {{fm}}
                <small class="text-danger">{{fm.errors|striptags}}</small><br><br>
            </div>
            {% endfor %}
-           <input type="submit" value="Signup" class="btn btn-primary mt-4"> <br> 
-    
+           <input type="submit" value="Update Password" class="btn btn-primary mt-4"> <br>
+
+            {% comment %}//////////// To show the errors for field errors ////////////////{% endcomment %}
+            
            {% if form.non_field_errors %}
                {% for error in form.non_field_errors %}
                <p class="alert alert-danger my-3">{{error}}</p>
                {% endfor %}
                {% endif %}
           </form>
-          
-          {% for message in messages %}
-            {{message}}
-          {% endfor %}
-            
           <div class="col-sm-12 ">
-            <a class='nav-link' href="{% url 'user_login'%}"> <button type="button" class="btn btn-primary" style="width: 100%;" > Login </button> </a>  </div>
+            <a class='nav-link' href="{% url 'user_profile'%}"> <button type="button" class="btn btn-primary" style="width: 100%;" > Back </button> </a>  </div>
+        </div>
+         </div>
         </div>
        </div>
 </body>
 {% endblock content %}
-    
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>User Profile</h1>
+    <h2>Welcome {user.username}</h2>
+    <form action="" method="">
+        {{form.as_p}}
+    </form> 
+    <div>
+        <a class='nav-link' href="{% url 'user_logout'%}"> <button type="button" class="btn btn-primary" style="width: 100%;" > logout </button> </a>  </div><br>
+    
+    <div>
+        <a class='nav-link' href="{% url 'user_change_pass'%}"> <button type="button" class="btn btn-primary" style="width: 100%;" > Change Pass </button> </a>  </div>
+
+{% endblock content %}
