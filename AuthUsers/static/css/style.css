@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins") 
-
-* {
+@import url("https://fonts.googleapis.com/css?family=Poppins") * {
     box-sizing: border-box;
-    font-family:  sans-serif;
+    font-family: sans-serif;
 }
 
 header {
@@ -18,23 +16,27 @@ header {
     align-items: center;
     z-index: 60;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: auto;
-    background:url('/AuthUsers/static/images/background.jpg') no-repeat center fixed;
+    min-height: 100vh;
+    background: url('/AuthUsers/static/images/background.jpg') no-repeat center fixed;
     background-size: cover;
     background-position: center;
 }
-.navigation{
+
+.navigation {
     border-radius: 25px;
 }
 
 .logo {
     font-size: 2em;
-    color: white;
+    font-family: 'Fantasy',Papyrus;
+    color: red;
     user-select: none;
+    
 }
 
 .navigation a {
@@ -83,6 +85,114 @@ body{
 }
 
 .navigation .btnLogin-pop:hover {
+    background: white;
+    color: #162938;
+}
+
+.login-form{
+    width: 300px;
+}
+.wrapper {
+    position: relative;
+    color: white;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrapper .form-box {
+    width: auto;
+    padding: 40px;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 0.9em;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -15px;
+}
+
+.input-box input {
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: white;
+    padding: 0 30px 0 5px;
+    padding-bottom: 10px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    bottom: 20%;
+    font-size: 0.9em;
+
+}
+.remember-forget {
+
+    font-size: 0.9em;
+    font-family: sans-serif;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: -15px 0 15px;
+
+}
+
+.btn{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    content: center;
+    transition: .5s;
+}
+.btn:hover {
     background: white;
     color: #162938;
 }
