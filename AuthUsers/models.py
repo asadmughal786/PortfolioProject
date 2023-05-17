@@ -12,7 +12,8 @@ class CustomUser(AbstractUser):
     user_phone = PhoneNumberField(region='PK')
     user_address = models.TextField(blank=False, null=True)
     user_freelancer = models.BooleanField(default=False,blank=True, null=True)
-    user_bio = models.TextField(max_length=255, blank=False, null=True)
+    user_bio = models.TextField(max_length=255, blank=True, null=True)
     profile_picture = models.ImageField(
         upload_to='image/%y', blank=True, default=None)
     user_website = models.URLField(blank=False, null=False)
+

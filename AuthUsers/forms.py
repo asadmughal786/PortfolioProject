@@ -29,7 +29,7 @@ class SignUpForm(UserCreationForm):
         model = CustomUser
         fields = ['profile_picture', 'username', 'email', 'first_name', 'last_name', 'password1', 'password2',
                   'user_age', 'user_phone', 'user_city', 'user_address', 'user_freelancer', 'user_bio', 'user_website']
-        labels = {'username': 'Username', 'first_name': 'First Name',
+        labels = {'username': 'Username', 'first_name': 'First Name', 'email':'Email', 'password1':'Password','password2':'Confirm Password',
                   'last_name': 'Last Name', 'email': 'Email Address'}
 
 
@@ -37,7 +37,7 @@ class EditUserProfileForm(UserChangeForm):
     password = None
 
     class Meta:
-        model = CustomUser
+        model = CustomUser  
         fields = ['username', 'first_name', 'last_name',
                   'email', 'date_joined', 'last_login']
         labels = {'email': 'Email'}

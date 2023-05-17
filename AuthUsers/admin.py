@@ -59,7 +59,10 @@ class UserAdmin(BaseUserAdmin):
     readonly_fields = ['avatar_tag']
 
     def avatar_tag(self, obj):
-        return format_html('<img src="{}" align = "middle" width="100px" height="100px"/>'.format(obj.profile_picture.url))
+        if obj.profile_picture:
+            return format_html('<img src="{}" align = "middle" width="100px" height="100px"/>'.format(obj.profile_picture.url))
+        else:
+            return "No Image"
     avatar_tag.short_description = 'Avatar'
 
 admin.site.register(CustomUser, UserAdmin)
