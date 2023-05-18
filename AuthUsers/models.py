@@ -17,3 +17,4 @@ class CustomUser(AbstractUser):
         upload_to='image/%y', blank=True, default=None)
     user_website = models.URLField(blank=False, null=False)
 
+

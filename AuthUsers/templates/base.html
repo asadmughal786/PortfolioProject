@@ -21,20 +21,22 @@
             </nav>
         </header>
         <div class="wrapper">
-            <div class="form-box login">
-                
                 {% block content %}
                     
-                {% endblock content %}
-                    
+                {% endblock content %}      
             </div>
         </div>
-        <div class="signature">
-            <h3>My Portfolio</h3>
-        </div>
+    </div>
+    <div class="signature">
+        <h3>My Portfolio</h3>
+    </div>
+    <div class="messages">
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
     </div>
 </body>
-<script src="{% static '/images/toaster.js'%}"></script>
+<script src="{% static '/js/toaster.js'%}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

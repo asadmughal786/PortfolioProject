@@ -36,7 +36,7 @@ def user_login(request):
     else:
         print('------------> Else Block')
         form = CustomAuthenticationForm()
-    return render(request, 'login2.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 # -----------------------------------Profile function
 

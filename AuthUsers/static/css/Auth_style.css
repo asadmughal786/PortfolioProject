@@ -33,10 +33,10 @@ body {
 
 .logo {
     font-size: 2em;
-    font-family: 'Fantasy',Papyrus;
-    color: red;
+    font-family: 'Fantasy', Papyrus;
+    color: rgb(133, 0, 0);
     user-select: none;
-    
+
 }
 
 .navigation a {
@@ -89,9 +89,10 @@ body {
     color: #162938;
 }
 
-.login-form{
+.login-form {
     width: 300px;
 }
+
 .wrapper {
     position: relative;
     color: white;
@@ -179,7 +180,19 @@ body {
 
 }
 
-.btn{
+.remember-forget a {
+    color: white;
+    text-decoration: none;
+    margin-top: 2.5px;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+
+}
+
+
+.btn {
     margin-top: 20px;
     width: 100px;
     height: 30px;
@@ -194,12 +207,43 @@ body {
     content: center;
     transition: .5s;
 }
+
 .btn:hover {
     background: white;
     color: #162938;
 }
 
+.login-register p{
+    justify-content: space-between;
+    text-align: center;
+}
 
+.login-form p a{
+    color: white;
+    text-decoration: none;
+}
+
+.login-form p a:hover{
+    color: white;
+    text-decoration:underline;
+}
+
+.text-error{
+    color: white;
+    font-style: italic;
+}
+
+
+.messages{
+    color: white;
+    border: white 1px solid;
+    background-color: green;
+}
+.messages p{
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+}
 
 /*------------------------------------------------ snackbar Styling-------------------------------------- */
 .snackbar {
@@ -216,30 +260,61 @@ body {
     left: 50%;
     bottom: 30px;
     font-size: 17px;
-  }
-  
-  #snackbar.show {
+}
+
+#snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  }
-  
-  @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}
-  }
-  
-  @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-  }
-  
-  @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
-    to {bottom: 0; opacity: 0;}
-  }
-  
-  @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
-  }
+}
+
+
+
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

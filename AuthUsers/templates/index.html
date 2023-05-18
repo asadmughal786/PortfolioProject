@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/AuthUsers/static/css/Auth_style.css">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+    <div class="bg-img">
+        <header>
+            <h2 class="logo">Python Django Portal</h2>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Service</a>
+                <button class="btnLogin-pop">Login</button>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class="form-box login">
+
+                <h2>Login</h2>
+                <form action="" method="post" novalidate class="login-form">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="text">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="text">
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forget">
+                        <label><input type="checkbox" />Remember Me</label><a href="Forget-Password">Forget
+                            Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>
+                            Don't have an account? <a href="#" class="login-register">Register</a>
+                        </p>
+                    </div>
+                </form>
+                <div class="snackbar">
+
+                </div>
+
+            </div>
+        </div>
+        <div class="signature">
+            <h3>My Portfolio</h3>
+        </div>
+    </div>
+</body>
+<script src="{% static '/images/toaster.js'%}"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

@@ -1,3 +1,4 @@
+from typing import Any
 from django.db import models
 from AuthUsers.models import CustomUser
 from phonenumber_field.modelfields import PhoneNumberField
@@ -61,6 +62,7 @@ class ProfessionalExperiance(BaseStartAtEndAt, BaseCreatedAtModel):
         CustomUser, verbose_name=('User_id'), on_delete=models.CASCADE)
     Company_name = models.CharField(max_length=30, blank=False, null=True)
     prof_exp_obj = models.Manager()
+
 
 
 class EducativeAchivements(BaseAchivementsModel):

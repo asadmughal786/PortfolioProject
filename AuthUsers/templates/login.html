@@ -1,45 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-<body>
-   
-    <div class="container">
-        <div class="row my-3">
-         <div class="col-sm-6 offset-sm-3">
-          <h3>Login</h3>
-          <hr>
-          <form action="" method="post" novalidate class="shadow p-5">
-           {% csrf_token %}
-           {% for fm in form %}
-           <div class="form-group">
-               {{fm.label_tag}} {{fm}}
-               <small class="text-danger">{{fm.errors|striptags}}</small><br><br>
-           </div>
-           {% endfor %}
-           <input type="submit" value="Login" class="btn btn-primary mt-4"> <br>
-
-            {% comment %}//////////// To show the errors for field errors ////////////////{% endcomment %}
-            
-           {% if form.non_field_errors %}
-               {% for error in form.non_field_errors %}
-               <p class="alert alert-danger my-3">{{error}}</p>
-               {% endfor %}
-               {% endif %}
-          </form>
-          <div class="col-sm-12 ">
-            <a class='nav-link' href="{% url 'user_signup'%}"> <button type="button" class="btn btn-primary" style="width: 100%;" > Signup </button> </a>  
-        </div>
-            <br>
-            <div>
-                {% for message in messages %}
-                <p class="alert alert-success my-3">{{message}}</p>
-                {% endfor %}
-            </div>
-        </div>
-         </div>
-        </div>
-       </div>
-</body> 
-
-
-{% endblock content %}
-    
+  <div class="form-box login">
+    <h2>Login</h2>
+    <form action="" method="post" novalidate class="login-form">
+      {% csrf_token %}
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        {{ form.username }}
+        <label>Email</label>
+      </div>
+      <small class="text-error">{{ form.username.errors|striptags }}</small>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        {{ form.password }}
+        <small class="text-error">{{ form.password.errors|striptags }}</small>
+        <label>Password</label>
+      </div>
+      <div class="remember-forget">
+        <label><input type="checkbox" />Remember Me</label><a href="Forget-Password">Forget Password?</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="login-register">
+        <p>
+          Don't have an account? <a href="#" class="login-register">Register</a>
+        </p>
+      </div>
+    </form>
+    <div class="snackbar"></div>
+  </div>
+{% endblock %}
