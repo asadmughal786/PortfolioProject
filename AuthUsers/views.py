@@ -23,7 +23,8 @@ def user_signup(request):
 
 def user_login(request):
     if request.method == "POST":
-        form = AuthenticationForm(request=request, data=request.POST)
+        form = CustomAuthenticationForm(request=request, data=request.POST)
+        print(form.data)
         if form.is_valid():
             u_name = form.cleaned_data['username']
             u_pass = form.cleaned_data['password']
@@ -33,8 +34,9 @@ def user_login(request):
                 messages.success(request, 'User login Succeessfully!')
                 return HttpResponseRedirect('/auth/Uprofile/')
     else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+        print('------------> Else Block')
+        form = CustomAuthenticationForm()
+    return render(request, 'login2.html', {'form': form})
 
 # -----------------------------------Profile function
 
@@ -91,9 +93,9 @@ def changepass1(request):
         return HttpResponseRedirect('/auth/login/')
 
 
-def User_details(request, id):
+def User_details(request, pk):
     if request.user.is_authenticated:
-        user_id = CustomUser.objects.get(pk=id)
+        user_id = CustomUser.objects.get(pk=pk)
         form = EditAdminProfileForm(instance=user_id)
         return render(request, 'userdetails.html', {"form": form})
     else:

@@ -5,6 +5,13 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from phonenumber_field.formfields import PhoneNumberField
 from django import forms
 from django.core import validators
+from django.contrib.auth.forms import AuthenticationForm
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+        # Disable autocomplete for form fields
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'custom-class', 'autocomplete':'off'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'custom-class','autocomplete':'off'}))
 
 
 class SignUpForm(UserCreationForm):
