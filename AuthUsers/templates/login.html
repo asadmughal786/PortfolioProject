@@ -7,7 +7,7 @@
       <div class="input-box">
         <span class="icon"><ion-icon name="mail"></ion-icon></span>
         {{ form.username }}
-        <label>Email</label>
+        {{form.username.label_tag}}
       </div>
       <small class="text-error">{{ form.username.errors|striptags }}</small>
       <div class="input-box">
@@ -26,6 +26,6 @@
         </p>
       </div>
     </form>
-    <div class="snackbar"></div>
+    
   </div>
 {% endblock %}

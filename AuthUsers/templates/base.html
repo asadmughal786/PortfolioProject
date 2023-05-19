@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static '/css/Auth_style.css'%}">
     <title>My Portfolio</title>
 </head>
 
 <body>
-    <div class="bg-img">
-        <header>
-            <h2 class="logo">Python Django Portal</h2>
-            <nav class="navigation">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Service</a>
-                <button class="btnLogin-pop">Login</button>
-            </nav>
-        </header>
-        <div class="wrapper">
+    <div class="outer">
+        <div class="bg-img">
+            <header>
+                <h2 class="logo">Python Django Portal</h2>
+                <nav class="navigation">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Service</a>
+                    <button class="btnLogin-pop">Login</button>
+                </nav>
+            </header>
+            <div class="wrapper">
                 {% block content %}
-                    
-                {% endblock content %}      
+
+                {% endblock content %}
+            </div>
+        </div>
+        <h2 class="inner-h2">Hello</h2>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="background-color: rgb(98, 98, 255);">
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+                <div class="mt-2 pt-2 border-top">
+                    <button type="button" class="btn btn-primary btn-sm">Take action</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
             </div>
         </div>
     </div>
-    <div class="signature">
-        <h3>My Portfolio</h3>
+
     </div>
-    <div class="messages">
-        {% for message in messages %}
-        <p>{{message}}</p>
-        {% endfor %}
-    </div>
+
+    {% comment %} Toaster {% endcomment %}
+   
 </body>
-<script src="{% static '/js/toaster.js'%}"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
